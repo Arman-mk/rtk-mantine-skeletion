@@ -1,5 +1,5 @@
 import { API_URL } from '@shared/constants/app'
-import { RootState } from '@app/store/store'
+import { RootState } from '@app/store.config'
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
 export const api = createApi({
@@ -14,6 +14,6 @@ export const api = createApi({
       return headers
     },
   }),
-  tagTypes: ['Auth'],
+  tagTypes: ['auth'],
   endpoints: (builder) => ({}),
 })

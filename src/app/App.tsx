@@ -1,19 +1,18 @@
-import { useState } from 'react'
-import './App.css'
-import reactLogo from '@assets/react.svg'
-import viteLogo from '/vite.svg'
-import { Provider } from 'react-redux'
-import { store } from '@app/store'
 import { Routing } from '@app/routes'
+import { store } from '@shared/store'
+import { MantineProvider } from '@mantine/core'
+import { Provider } from 'react-redux'
+
+import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className='App'>
-      <Provider store={store}>
-        <Routing />
-      </Provider>
+    <div id='arm-app'>
+      <MantineProvider withGlobalStyles withNormalizeCSS>
+        <Provider store={store}>
+          <Routing />
+        </Provider>
+      </MantineProvider>
     </div>
   )
 }

@@ -19,10 +19,13 @@
     "baseUrl": ".",
     "paths": {
       "@features/*": ["src/features/*"],
-      "@shared/*": ["src/shared/*"],
       "@assets/*": ["src/assets/*"],
       "@app/*": ["src/app/*"],
-      "@pages/*": ["src/pages/*"]
+      "@pages/*": ["src/pages/*"],
+      "@store/*": ["src/shared/store/*"],
+      "@ui/*": ["src/shared/ui/*"],
+      "@lib/*": ["src/shared/lib/*"],
+      "@shared/*": ["src/shared/*"]
     }
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src"],
