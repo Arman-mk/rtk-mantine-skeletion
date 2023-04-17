@@ -24,6 +24,7 @@ export default class CookieService {
     return setCookie(key, JSON.stringify(value), {
       ...options,
       sameSite: 'strict',
+      secure: true,
     })
   }
 

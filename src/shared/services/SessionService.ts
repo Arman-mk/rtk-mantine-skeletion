@@ -1,12 +1,15 @@
+import { IUser } from './../../features/auth/lib/types'
 import { TOKEN_KEY, USER_STORAGE_KEY } from '@shared/constants/app'
 import CookieService from './CookieService'
-import StorageService from './storageService'
+import StorageService from './StorageService'
 
 interface ISessionUser {
   id: string
   username: string
   email: string
-  name: string
+  password: string
+  profilePicture: string
+  createdAt?: string
 }
 
 interface ISessionAuth {
@@ -15,7 +18,7 @@ interface ISessionAuth {
   expiresIn?: number
 }
 
-interface ISession {
+export interface ISession {
   user: ISessionUser
   auth: ISessionAuth
 }
@@ -29,6 +32,14 @@ export default class SessionService {
     if (auth) {
       CookieService.set(TOKEN_KEY, auth)
     }
+  }
+
+  static getToken(): string | null {
+    return CookieService.get(TOKEN_KEY)
+  }
+
+  static getUser(): IUser | null {
+    return StorageService.get(USER_STORAGE_KEY)
   }
 
   static remove(): void {

@@ -17,6 +17,7 @@ const Routing: FC = () => {
                   element={subRoute.component}
                 />
               ))}
+              <Route path='*' element={<h1>Page not found...</h1>} />
             </Route>
           )
         })}

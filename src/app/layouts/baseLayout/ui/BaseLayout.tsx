@@ -1,10 +1,14 @@
 import { AppShell } from '@mantine/core'
 import { Suspense } from 'react'
 import { Outlet } from 'react-router-dom'
+import AppHeader from './AppHeader'
+import AppNavbar from './AppNavbar'
 
 const BaseLayout = () => {
   return (
     <AppShell
+      header={<AppHeader />}
+      navbar={<AppNavbar />}
       padding='md'
       styles={(theme) => ({
         main: {

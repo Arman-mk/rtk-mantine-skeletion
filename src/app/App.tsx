@@ -4,15 +4,16 @@ import { MantineProvider } from '@mantine/core'
 import { Provider } from 'react-redux'
 
 import './App.css'
+import ThemeProvider from './theme/ThemeProvider'
 
 function App() {
   return (
     <div id='arm-app'>
-      <MantineProvider withGlobalStyles withNormalizeCSS>
-        <Provider store={store}>
+      <Provider store={store}>
+        <ThemeProvider withGlobalStyles withNormalizeCSS>
           <Routing />
-        </Provider>
-      </MantineProvider>
+        </ThemeProvider>
+      </Provider>
     </div>
   )
 }

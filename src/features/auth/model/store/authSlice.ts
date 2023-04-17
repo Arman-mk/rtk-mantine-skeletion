@@ -1,23 +1,27 @@
-import { RootState } from '@shared/store'
+import { IAuthState } from '@features/auth/lib/types'
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { IAuthState, IUser } from '@features/auth/lib/types'
+import { USER_STORAGE_KEY } from '@shared/constants/app'
+import SessionService, { ISession } from '@shared/services/SessionService'
+import StorageService from '@shared/services/StorageService'
+import { RootState } from '@shared/store'
 
-const user = JSON.parse(localStorage.getItem('user') || 'null') // TODO: fix this
+const user = SessionService.getUser()
 
 const authSlice = createSlice({
   name: 'auth',
   initialState: {
     user: user,
-    token: user ? user.token : null,
+    token: SessionService.getToken(),
   } as IAuthState,
   reducers: {
-    setUser: (state, action: PayloadAction<IUser>) => {
-      localStorage.setItem('user', JSON.stringify(action.payload))
-      state.user = action.payload
-      state.token = user?.token
+    setUser: (state, action: PayloadAction<ISession>) => {
+      StorageService.set(USER_STORAGE_KEY, action.payload)
+      SessionService.save(action.payload)
+      state.user = action.payload.user
+      state.token = action.payload?.auth.token
     },
     logout: (state) => {
-      localStorage.clear()
+      StorageService.remove(USER_STORAGE_KEY)
       state.user = null
     },
   },

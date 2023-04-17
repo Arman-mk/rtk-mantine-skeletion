@@ -1,6 +1,6 @@
 import { API_URL } from '@shared/constants/app'
-import { RootState } from '@app/store.config'
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
+import { RootState } from '../types'
 
 export const api = createApi({
   reducerPath: 'api',
