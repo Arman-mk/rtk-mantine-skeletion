@@ -1,6 +1,6 @@
 import HomePage from '@pages/home'
 import { ReactNode } from 'react'
-import BaseLayout from '@app/layouts/baseLayout/ui/base-layout'
+import BaseLayout from '@app/layouts/base-layout/ui/base-layout'
 
 interface IRoute {
   key: string

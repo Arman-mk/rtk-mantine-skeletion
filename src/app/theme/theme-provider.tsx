@@ -1,4 +1,4 @@
-import { selectApp, setTheme } from '@shared/store/app/appSlice'
+import { selectApp, setTheme } from '@store/app/app-slice'
 import { useAppSelector } from '@store/hooks/use-app-selector'
 import {
   ColorScheme,

@@ -12,11 +12,10 @@ const Modal: FC<IModal> = ({ children, opened, routeKey, ...rest }: IModal) => {
     if (routeKey) {
       if (opened) {
         url.searchParams.set(routeKey, 'opened')
-        window.history.replaceState(null, '', url)
       } else {
         url.searchParams.delete(routeKey)
-        window.history.replaceState(null, '', url)
       }
+      window.history.replaceState(null, '', url)
     }
   }, [routeKey, opened])
 
