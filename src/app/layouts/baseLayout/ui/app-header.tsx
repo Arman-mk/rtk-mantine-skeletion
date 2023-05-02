@@ -1,4 +1,4 @@
-import ThemeSwitcher from '@app/layouts/shared/ui/ThemeSwitcher'
+import ThemeSwitcher from '@app/layouts/shared/ui/theme-switcher'
 import { Group, Header } from '@mantine/core'
 import { memo } from 'react'
 

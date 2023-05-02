@@ -4,7 +4,7 @@ import { MantineProvider } from '@mantine/core'
 import { Provider } from 'react-redux'
 
 import './App.css'
-import ThemeProvider from './theme/ThemeProvider'
+import ThemeProvider from './theme/theme-provider'
 
 function App() {
   return (

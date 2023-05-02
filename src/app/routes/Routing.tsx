@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import { HashRouter, Route, Routes } from 'react-router-dom'
-import { routes } from './routeHelpers'
+import { routes } from './route-helpers'
 
 const Routing: FC = () => {
   return (

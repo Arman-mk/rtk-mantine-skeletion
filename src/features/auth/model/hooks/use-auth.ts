@@ -1,6 +1,6 @@
-import { useAppSelector } from '@shared/store/hooks/useAppSelector'
+import { useAppSelector } from '@store/hooks/use-app-selector'
 import { useMemo } from 'react'
-import { selectCurrentUser } from '@features/auth/model/store/authSlice'
+import { selectCurrentUser } from '@features/auth/model/store/auth-slice'
 
 export const useAuth = () => {
   const user = useAppSelector(selectCurrentUser)

@@ -1,4 +1,4 @@
-import * as routeHelpers from './routeHelpers'
-import Routing from './Routing'
+import * as routeHelpers from './route-helpers'
+import Routing from './routing'
 
 export { routeHelpers, Routing }

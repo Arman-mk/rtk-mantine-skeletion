@@ -1,5 +1,5 @@
 import { selectApp, setTheme } from '@shared/store/app/appSlice'
-import { useAppSelector } from '@shared/store/hooks/useAppSelector'
+import { useAppSelector } from '@store/hooks/use-app-selector'
 import {
   ColorScheme,
   ColorSchemeProvider,
@@ -7,7 +7,7 @@ import {
   MantineProviderProps,
 } from '@mantine/core'
 import { useState } from 'react'
-import { useAppDispatch } from '@shared/store/hooks/useAppDispatch'
+import { useAppDispatch } from '@store/hooks/use-app-dispatch'
 
 interface ThemeProviderProps extends MantineProviderProps {
   children: React.ReactNode

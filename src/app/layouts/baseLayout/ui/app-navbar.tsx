@@ -1,7 +1,7 @@
 import { Navbar } from '@mantine/core'
 import { memo } from 'react'
 import { navMenuItems } from '../../shared/lib/helpers'
-import NavMenu from '../../shared/ui/NavMenu'
+import NavMenu from '../../shared/ui/nav-menu'
 
 const AppNavbar = () => {
   return (

@@ -1,9 +1,8 @@
-import { IUser } from './../../features/auth/lib/types'
 import { TOKEN_KEY, USER_STORAGE_KEY } from '@shared/constants/app'
 import CookieService from './CookieService'
 import StorageService from './StorageService'
 
-interface ISessionUser {
+export interface ISessionUser {
   id: string
   username: string
   email: string
@@ -38,7 +37,7 @@ export default class SessionService {
     return CookieService.get(TOKEN_KEY)
   }
 
-  static getUser(): IUser | null {
+  static getUser(): ISessionUser | null {
     return StorageService.get(USER_STORAGE_KEY)
   }
 

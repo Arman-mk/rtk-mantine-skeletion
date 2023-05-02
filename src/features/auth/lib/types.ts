@@ -1,11 +1,6 @@
-export interface IUser {
-  id: string
-  username: string
-  email: string
-  password: string
-  profilePicture: string
-  createdAt?: string
-}
+import { ISessionUser } from '@shared/services/SessionService'
+
+export interface IUser extends ISessionUser {}
 
 export interface IAuthState {
   user: IUser | null

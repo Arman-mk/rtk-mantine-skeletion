@@ -13,11 +13,18 @@ const NavMenu: FC<INavMenu> = ({ menuItems }) => {
     <Box>
       {menuItems.map((item: INavMenuItem, index: number) => {
         return (
-          <NavLink label={item.title} component={RouteNavLink} to={item.path} icon={item.icon}>
+          <NavLink
+            key={item.path}
+            label={item.title}
+            component={RouteNavLink}
+            to={item.path}
+            icon={item.icon}
+          >
             {item.children &&
               item.children.map((child: INavMenuItem, index: number) => {
                 return (
                   <NavLink
+                    key={child.path}
                     label={child.title}
                     component={RouteNavLink}
                     to={child.path}
