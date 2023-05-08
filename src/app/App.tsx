@@ -1,6 +1,5 @@
 import { Routing } from '@app/routes'
 import { store } from '@shared/store'
-import { MantineProvider } from '@mantine/core'
 import { Provider } from 'react-redux'
 
 import './App.css'

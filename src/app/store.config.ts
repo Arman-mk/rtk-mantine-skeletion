@@ -1,5 +1,5 @@
 import { authApi, authSlice } from '@features/auth'
-import { api } from '@shared/store/api/serverApi'
+import { api } from '@shared/store/api/server-api'
 import { configureStore } from '@reduxjs/toolkit'
 import { setupListeners } from '@reduxjs/toolkit/query/react'
 import appSlice from '@store/app/app-slice'

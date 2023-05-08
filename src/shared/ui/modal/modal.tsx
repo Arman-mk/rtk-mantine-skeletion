@@ -1,26 +1,28 @@
 import { Modal as CoreModal, ModalProps } from '@mantine/core'
-import { FC, useEffect } from 'react'
+import { FC } from 'react'
+import useModalNavigate from './use-navigate-modal'
 
-interface IModal extends ModalProps {
+export interface IModal extends ModalProps {
   children: React.ReactNode
   routeKey: string
 }
 
-const Modal: FC<IModal> = ({ children, opened, routeKey, ...rest }: IModal) => {
-  useEffect(() => {
-    const url = new URL(window.location.href)
+const Modal: FC<IModal> = ({ children, onClose, opened, routeKey, ...rest }: IModal) => {
+  const { match, close } = useModalNavigate()
+
+  if (routeKey) {
+    opened = Boolean(match(routeKey))
+  }
+
+  const closeHandler = () => {
     if (routeKey) {
-      if (opened) {
-        url.searchParams.set(routeKey, 'opened')
-      } else {
-        url.searchParams.delete(routeKey)
-      }
-      window.history.replaceState(null, '', url)
+      close()
     }
-  }, [routeKey, opened])
+    onClose && onClose()
+  }
 
   return (
-    <CoreModal opened={opened} {...rest}>
+    <CoreModal opened={opened} onClose={closeHandler} {...rest}>
       {children}
     </CoreModal>
   )

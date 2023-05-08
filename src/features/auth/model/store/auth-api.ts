@@ -1,5 +1,5 @@
 import { IUser, ILoginUser, IRegisterUser } from '@features/auth/lib/types'
-import { api } from '@shared/store/api/serverApi'
+import { api } from '@shared/store/api/server-api'
 
 export const authApi = api.injectEndpoints({
   endpoints: (build) => ({
