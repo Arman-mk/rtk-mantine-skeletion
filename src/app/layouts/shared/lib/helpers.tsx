@@ -8,8 +8,8 @@ export const navMenuItems: INavMenuItem[] = [
     icon: <IconHome />,
   },
   {
-    title: 'Dashboard',
-    path: '/dashboard',
+    title: 'Teachers',
+    path: '/teachers',
     icon: <IconGauge />,
   },
   {

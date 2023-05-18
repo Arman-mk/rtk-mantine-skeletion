@@ -1,9 +1,11 @@
 import BaseLayout from '@app/layouts/base-layout/ui/base-layout'
-import Login from '@features/auth/ui/login/login'
+import Login from '@features/auth/components/login/login'
 import HomePage from '@pages/home'
-import Button from '@ui/button'
-import { IModal } from '@ui/modal/modal'
-import { ReactComponent, ReactNode } from 'react'
+import { ReactNode, FC } from 'react'
+import { Button } from '@core/button'
+import { IModalRoute } from '@core/modal/types'
+import BlankLayout from '@app/layouts/blank-layout/blank-layout'
+import LoginPage from '@pages/home/auth/login.page'
 
 interface IRoute {
   key: string
@@ -14,14 +16,21 @@ interface IRoute {
   routes?: IRoute[]
 }
 
-interface IModalRoute {
-  key: string
-  path?: string
-  Component: ReactComponent | null
-  modalProps: IModal
-}
-
 export const routes: IRoute[] = [
+  {
+    key: 'auth',
+    path: '/auth',
+    component: <BlankLayout />,
+    routes: [
+      {
+        index: true,
+        key: 'login',
+        path: 'login',
+        component: <LoginPage />,
+      },
+    ],
+  },
+
   {
     key: 'home',
     path: '/',
@@ -40,14 +49,14 @@ export const modalRoutes: IModalRoute[] = [
   {
     path: 'home/form',
     Component: Login,
-    modalProps: {
+    props: {
       size: 'lg',
     },
   },
   {
     path: 'button-view',
     Component: Button,
-    modalProps: {
+    props: {
       size: 'xs',
     },
   },

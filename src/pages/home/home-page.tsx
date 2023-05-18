@@ -1,9 +1,7 @@
 import { useToggle } from '@shared/hooks/use-toggle'
-import Modal from '@shared/ui/modal'
-import { Button, Input } from '@shared/ui'
+import { Button, Input, Modal } from '@core/index'
 import { FC } from 'react'
-import useModalNavigate from '@ui/modal/use-navigate-modal'
-import useRouterModal from '@ui/modal/use-router-modal'
+import useRouterModal from '@core/modal/use-router-modal'
 
 const HomePage: FC = () => {
   const [opened, setOpened] = useToggle(false)

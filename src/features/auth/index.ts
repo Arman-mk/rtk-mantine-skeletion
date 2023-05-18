@@ -1,5 +1,3 @@
-import { authApi } from './model/store/auth-api'
-import authSlice from './model/store/auth-slice'
-import { useAuth } from './model/hooks/use-auth'
+import login from './components/login/login'
 
-export { authSlice, authApi, useAuth }
+export { login }

@@ -1,8 +1,10 @@
+import '@shared/localization/i18n'
+import './App.css'
+
 import { Routing } from '@app/routes'
 import { store } from '@shared/store'
 import { Provider } from 'react-redux'
 
-import './App.css'
 import ThemeProvider from './theme/theme-provider'
 
 function App() {

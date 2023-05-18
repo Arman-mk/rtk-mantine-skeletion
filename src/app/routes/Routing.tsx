@@ -1,4 +1,4 @@
-import ModalsProvider from '@ui/modal/modals-provider.tsx'
+import { Modal, ModalsProvider } from '@core/modal'
 import { FC } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { modalRoutes, routes } from './route-helpers'
@@ -6,7 +6,7 @@ import { modalRoutes, routes } from './route-helpers'
 const Routing: FC = () => {
   return (
     <BrowserRouter>
-      <ModalsProvider routes={modalRoutes}>
+      <ModalsProvider routes={modalRoutes} modal={{ Component: Modal }}>
         <Routes>
           {routes.map((route) => {
             return (

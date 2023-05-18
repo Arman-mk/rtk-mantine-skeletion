@@ -5,7 +5,7 @@ import { RootState } from '../types'
 export const api = createApi({
   reducerPath: 'api',
   baseQuery: fetchBaseQuery({
-    baseUrl: `${API_URL}/api`,
+    baseUrl: `${API_URL}`,
     prepareHeaders: (headers, { getState }) => {
       const token = (getState() as RootState).auth.token
       if (token) {

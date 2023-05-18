@@ -23,7 +23,7 @@
       "@app/*": ["src/app/*"],
       "@pages/*": ["src/pages/*"],
       "@store/*": ["src/shared/store/*"],
-      "@ui/*": ["src/shared/ui/*"],
+      "@core/*": ["src/shared/components/core/*"],
       "@lib/*": ["src/shared/lib/*"],
       "@shared/*": ["src/shared/*"]
     }

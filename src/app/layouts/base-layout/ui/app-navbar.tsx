@@ -1,11 +1,21 @@
+import { navMenuItems } from '@app/layouts/shared/lib/helpers'
+import NavMenu from '@app/layouts/shared/ui/nav-menu'
 import { Navbar } from '@mantine/core'
+import { selectApp } from '@store/app/app.slice'
 import { memo } from 'react'
-import { navMenuItems } from '../../shared/lib/helpers'
-import NavMenu from '../../shared/ui/nav-menu'
+import { useAppSelector } from '@store/hooks/use-app-selector'
 
 const AppNavbar = () => {
+  const { navbarIsCollapsed } = useAppSelector(selectApp)
+
   return (
-    <Navbar width={{ base: 250 }} height={'100%'} p='xs'>
+    <Navbar
+      hiddenBreakpoint='sm'
+      hidden={navbarIsCollapsed}
+      width={{ base: 250 }}
+      height={'100%'}
+      p='xs'
+    >
       <Navbar.Section>
         <NavMenu menuItems={navMenuItems} />
       </Navbar.Section>
